@@ -34,7 +34,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-persistence-testkit" % AkkaVersion % Test,
   "com.typesafe.akka" %% "akka-stream-testkit" % AkkaVersion % Test,
 
- // "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
+  "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
 
   "de.heikoseeberger" %% "akka-http-circe" % "1.29.1",
   "io.circe" %% "circe-core" % circeVersion,
@@ -62,7 +62,7 @@ javacOptions in Compile ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 fork in run := false
 parallelExecution in Test := false
 logBuffered in Test := false
-/*
+
 PB.targets in Compile := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value
 )
@@ -70,4 +70,4 @@ PB.targets in Compile := Seq(
 packageName in Universal := "app"
 
 enablePlugins(JavaAppPackaging)
-enablePlugins(DockerPlugin)*/
+enablePlugins(DockerPlugin)

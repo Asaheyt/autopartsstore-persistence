@@ -3,16 +3,20 @@ package kz.asaheyt.inc.autopartsstore.persistence.entity
 import akka.actor.typed.Behavior
 import akka.cluster.sharding.typed.scaladsl.EntityTypeKey
 import akka.persistence.typed.PersistenceId
-import akka.persistence.typed.scaladsl.{Effect, EventSourcedBehavior}
-import kz.asaheyt.inc.autopartsstore.persistence.command.{AddToCartAutoPartCommand, AutoPartCommand, CheckoutAutoPartCommand, CreateAutoPartCommand, DeliverAutoPartCommand, FinishAutoPartCommand, RemoveFromCartAutoPartCommand, ReturnAutoPartCommand}
-import kz.asaheyt.inc.autopartsstore.persistence.event.{AddToCartAutoPartEvent, AutoPartEvent, CheckoutAutoPartEvent, CreateAutoPartEvent, DeliverAutoPartEvent, FinishAutoPartEvent, RemoveFromCartAutoPartEvent, ReturnAutoPartEvent}
+import akka.persistence.typed.scaladsl.{Effect, EventSourcedBehavior, RetentionCriteria}
+import kz.asaheyt.inc.autopartsstore.persistence.command.{AutoPartCommand, CheckoutAutoPartCommand, CreateAutoPartCommand, DeliverAutoPartCommand, ExamineAutoPartCommand, PayAutoPartCommand, ReturnAutoPartCommand, ShowcaseAutoPartCommand}
+import kz.asaheyt.inc.autopartsstore.persistence.event.{AutoPartEvent, CheckoutAutoPartEvent, CreateAutoPartEvent, DeliverAutoPartEvent, ExamineAutoPartEvent, PayAutoPartEvent, ReturnAutoPartEvent, ShowcaseAutoPartEvent}
 
 object AutoPartEntity {
 
   case class AutoPart(ts: Option[Long] = None,
                       name: Option[String] = None,
                       autoPartId: Option[Long] = None,
-                      address: Option[String] = None)
+                      address: Option[String] = None,
+                      price: Option[Double] = None,
+                      quantity: Option[Int] = None,
+                      customerId: Option[Long] = None,
+                      totalPrice: Option[Double] = None)
 
 
   object AutoPart {
@@ -28,19 +32,21 @@ object AutoPartEntity {
 
     case object INIT extends AutoPartEntityState
 
-    case object ADDTOCART extends AutoPartEntityState
-
-    case object REMOVEFROMCART extends AutoPartEntityState
-
     case object CHECKOUT extends AutoPartEntityState
+
+    case object PAYMENT extends AutoPartEntityState
 
     case object DELIVER extends AutoPartEntityState
 
-    case object FINISH extends AutoPartEntityState
+    case object CLOSE extends AutoPartEntityState
 
     case object RETURN extends AutoPartEntityState
 
-    case object CLOSE extends AutoPartEntityState
+    case object EXAMINE extends AutoPartEntityState
+
+    case object SHOWCASE extends AutoPartEntityState
+
+    case object FORSALE extends AutoPartEntityState
 
   }
 
@@ -52,29 +58,10 @@ object AutoPartEntity {
           content = content.copy(
             ts = Some(evt.ts),
             name = Some(evt.name),
-            autoPartId = Some(evt.autoPartId)
-          ),
-          state = AutoPartEntityState.ADDTOCART
-        )
-      }
-
-      case evt: AddToCartAutoPartEvent => {
-        copy(
-          content = content.copy(
-            ts = Some(evt.ts),
-            autoPartId = Some(evt.autoPartId)
+            autoPartId = Some(evt.autoPartId),
+            quantity = Some(evt.quantity)
           ),
           state = AutoPartEntityState.CHECKOUT
-        )
-      }
-
-      case evt: RemoveFromCartAutoPartEvent => {
-        copy(
-          content = content.copy(
-            ts = Some(evt.ts),
-            autoPartId = Some(evt.autoPartId)
-          ),
-          state = AutoPartEntityState.INIT
         )
       }
 
@@ -82,9 +69,27 @@ object AutoPartEntity {
         copy(
           content = content.copy(
             ts = Some(evt.ts),
-            autoPartId = Some(evt.autoPartId)
+            name = Some(evt.name),
+            autoPartId = Some(evt.autoPartId),
+            quantity = Some(evt.quantity),
+            customerId = Some(evt.customerId)
           ),
-          state = AutoPartEntityState.DELIVER
+          state = AutoPartEntityState.PAYMENT
+        )
+      }
+
+      case evt: PayAutoPartEvent => {
+        copy(
+          content = content.copy(
+            ts = Some(evt.ts),
+            name = Some(evt.name),
+            autoPartId = Some(evt.autoPartId),
+            quantity = Some(evt.quantity),
+            customerId = Some(evt.customerId),
+            price = Some(evt.price),
+            totalPrice = Some(evt.totalPrice)
+          ),
+          state = AutoPartEntityState.INIT
         )
       }
 
@@ -94,16 +99,6 @@ object AutoPartEntity {
             ts = Some(evt.ts),
             autoPartId = Some(evt.autoPartId),
             address = Some(evt.address)
-          ),
-          state = AutoPartEntityState.FINISH
-        )
-      }
-
-      case evt: FinishAutoPartEvent => {
-        copy(
-          content = content.copy(
-            ts = Some(evt.ts),
-            autoPartId = Some(evt.autoPartId)
           ),
           state = AutoPartEntityState.CLOSE
         )
@@ -115,9 +110,30 @@ object AutoPartEntity {
             ts = Some(evt.ts),
             autoPartId = Some(evt.autoPartId)
           ),
-          state = AutoPartEntityState.INIT
+          state = AutoPartEntityState.EXAMINE
         )
       }
+
+      case evt: ExamineAutoPartEvent => {
+        copy(
+          content = content.copy(
+            ts = Some(evt.ts),
+            autoPartId = Some(evt.autoPartId)
+          ),
+          state = AutoPartEntityState.SHOWCASE
+        )
+      }
+
+      case evt: ShowcaseAutoPartEvent => {
+        copy(
+          content = content.copy(
+            ts = Some(evt.ts),
+            autoPartId = Some(evt.autoPartId)
+          ),
+          state = AutoPartEntityState.FORSALE
+        )
+      }
+
     }
   }
 
@@ -135,7 +151,10 @@ object AutoPartEntity {
       StateHolder.empty,
       (state, command) => commandHandler(AutoPartId, state, command),
       (state, event) => handleEvent(state, event)
-    )
+      ).withTagger(_ => eventProcessorTag)
+        .withRetention(RetentionCriteria.snapshotEvery(numberOfEvents = 10, keepNSnapshots = 2))
+        .eventAdapter(new AutoPartEventAdapter)
+
   }
 
 
@@ -148,7 +167,8 @@ object AutoPartEntity {
             val evt = CreateAutoPartEvent(
               ts = cmd.ts,
               autoPartId = cmd.autoPartId,
-              name = cmd.name
+              name = cmd.name,
+              quantity = cmd.quantity
             )
 
             Effect.persist(evt)
@@ -158,37 +178,6 @@ object AutoPartEntity {
         }
       }
 
-      case cmd: AddToCartAutoPartCommand => {
-        state.state match {
-          case AutoPartEntityState.ADDTOCART => {
-
-            val evt = AddToCartAutoPartEvent(
-              ts = cmd.ts,
-              autoPartId = cmd.autoPartId
-            )
-
-            Effect.persist(evt)
-          }
-
-          case _ => throw new RuntimeException("Error")
-        }
-      }
-
-      case cmd: RemoveFromCartAutoPartCommand => {
-        state.state match {
-          case AutoPartEntityState.CHECKOUT => {
-
-            val evt = RemoveFromCartAutoPartEvent(
-              ts = cmd.ts,
-              autoPartId = cmd.autoPartId
-            )
-
-            Effect.persist(evt)
-          }
-
-          case _ => throw new RuntimeException("Error")
-        }
-      }
 
       case cmd: CheckoutAutoPartCommand => {
         state.state match {
@@ -196,7 +185,31 @@ object AutoPartEntity {
 
             val evt = CheckoutAutoPartEvent(
               ts = cmd.ts,
-              autoPartId = cmd.autoPartId
+              autoPartId = cmd.autoPartId,
+              name = cmd.name,
+              quantity = cmd.quantity,
+              customerId = cmd.customerId
+            )
+
+            Effect.persist(evt)
+          }
+
+          case _ => throw new RuntimeException("Error")
+        }
+      }
+
+      case cmd: PayAutoPartCommand => {
+        state.state match {
+          case AutoPartEntityState.PAYMENT => {
+
+            val evt = PayAutoPartEvent(
+              ts = cmd.ts,
+              autoPartId = cmd.autoPartId,
+              name = cmd.name,
+              quantity = cmd.quantity,
+              customerId = cmd.customerId,
+              price = cmd.price,
+              totalPrice = cmd.totalPrice
             )
 
             Effect.persist(evt)
@@ -223,22 +236,6 @@ object AutoPartEntity {
         }
       }
 
-      case cmd: FinishAutoPartCommand => {
-        state.state match {
-          case AutoPartEntityState.FINISH => {
-
-            val evt = FinishAutoPartEvent(
-              ts = cmd.ts,
-              autoPartId = cmd.autoPartId
-            )
-
-            Effect.persist(evt)
-          }
-
-          case _ => throw new RuntimeException("Error")
-        }
-      }
-
       case cmd: ReturnAutoPartCommand => {
         state.state match {
           case AutoPartEntityState.CLOSE => {
@@ -254,6 +251,39 @@ object AutoPartEntity {
           case _ => throw new RuntimeException("Error")
         }
       }
+
+      case cmd: ExamineAutoPartCommand => {
+        state.state match {
+          case AutoPartEntityState.EXAMINE => {
+
+            val evt = ExamineAutoPartEvent(
+              ts = cmd.ts,
+              autoPartId = cmd.autoPartId
+            )
+
+            Effect.persist(evt)
+          }
+
+          case _ => throw new RuntimeException("Error")
+        }
+      }
+
+      case cmd: ShowcaseAutoPartCommand => {
+        state.state match {
+          case AutoPartEntityState.SHOWCASE => {
+
+            val evt = ShowcaseAutoPartEvent(
+              ts = cmd.ts,
+              autoPartId = cmd.autoPartId
+            )
+
+            Effect.persist(evt)
+          }
+
+          case _ => throw new RuntimeException("Error")
+        }
+      }
+
     }
   }
 

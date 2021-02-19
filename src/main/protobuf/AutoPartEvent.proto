@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+import "google/protobuf/wrappers.proto";
+
+option (scalapb.options) = {
+  package_name: "kz.asaheyt.inc.autopartsstore.persistence.event.proto"
+  flat_package: true
+};
+
+message CreateAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string name = 2;
+  string autoPartId = 3;
+  string quantity = 4;
+}
+
+message CheckoutAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string name = 2;
+  string autoPartId = 3;
+  string quantity = 4;
+  string customerId = 5;
+}
+
+message PayAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string name = 2;
+  string autoPartId = 3;
+  string quantity = 4;
+  string customerId = 5;
+  string price = 6;
+  string totalPrice = 7;
+}
+
+message DeliverAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string autoPartId = 2;
+  string address = 3;
+}
+
+message ReturnAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string autoPartId = 2;
+}
+
+message ExamineAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string autoPartId = 2;
+}
+
+message ShowcaseAutoPartEventV1 {
+  option (scalapb.message).extends = "kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent";
+  string ts = 1;
+  string autoPartId = 2;
+}
