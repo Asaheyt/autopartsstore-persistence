@@ -4,6 +4,7 @@ import akka.actor.typed.Behavior
 import akka.cluster.sharding.typed.scaladsl.EntityTypeKey
 import akka.persistence.typed.PersistenceId
 import akka.persistence.typed.scaladsl.{Effect, EventSourcedBehavior, RetentionCriteria}
+import kz.asaheyt.inc.autopartsstore.persistence.adapter.AutoPartEventAdapter
 import kz.asaheyt.inc.autopartsstore.persistence.command.{AutoPartCommand, CheckoutAutoPartCommand, CreateAutoPartCommand, DeliverAutoPartCommand, ExamineAutoPartCommand, PayAutoPartCommand, ReturnAutoPartCommand, ShowcaseAutoPartCommand}
 import kz.asaheyt.inc.autopartsstore.persistence.event.{AutoPartEvent, CheckoutAutoPartEvent, CreateAutoPartEvent, DeliverAutoPartEvent, ExamineAutoPartEvent, PayAutoPartEvent, ReturnAutoPartEvent, ShowcaseAutoPartEvent}
 
@@ -89,7 +90,7 @@ object AutoPartEntity {
             price = Some(evt.price),
             totalPrice = Some(evt.totalPrice)
           ),
-          state = AutoPartEntityState.INIT
+          state = AutoPartEntityState.DELIVER
         )
       }
 
@@ -182,6 +183,19 @@ object AutoPartEntity {
       case cmd: CheckoutAutoPartCommand => {
         state.state match {
           case AutoPartEntityState.CHECKOUT => {
+
+            val evt = CheckoutAutoPartEvent(
+              ts = cmd.ts,
+              autoPartId = cmd.autoPartId,
+              name = cmd.name,
+              quantity = cmd.quantity,
+              customerId = cmd.customerId
+            )
+
+            Effect.persist(evt)
+          }
+
+          case AutoPartEntityState.FORSALE => {
 
             val evt = CheckoutAutoPartEvent(
               ts = cmd.ts,
