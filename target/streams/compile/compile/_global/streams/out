@@ -1,242 +1,83 @@
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:9:50: object entity is not a member of package kz.asaheyt.inc.kz.asaheyt.inc.autopartsstore.persistence[0m
-[0m[[0m[31merror[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.entity.AutoPartEntity[0m
-[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:10:50: object route is not a member of package kz.asaheyt.inc.kz.asaheyt.inc.autopartsstore.persistence[0m
-[0m[[0m[31merror[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.route.{HttpRoutes, WebServer}[0m
-[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:11:50: object util is not a member of package kz.asaheyt.inc.kz.asaheyt.inc.autopartsstore.persistence[0m
-[0m[[0m[31merror[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.util.EventProcessorSettings[0m
-[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:44:22: not found: value EventProcessorSettings[0m
-[0m[[0m[31merror[0m] [0m[0m      val settings = EventProcessorSettings(system)[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:46:7: not found: value AutoPartEntityProto[0m
-[0m[[0m[31merror[0m] [0m[0m      AutoPartEntityProto.init(system, settings)[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:48:28: not found: type HttpRoutes[0m
-[0m[[0m[31merror[0m] [0m[0m      val httpRoutes = new HttpRoutes()[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:49:11: not found: type WebServer[0m
-[0m[[0m[31merror[0m] [0m[0m      new WebServer(httpRoutes.routes, httpPort).start()[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:12:9: not found: value CreateAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        CreateAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:13:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:14:11: not found: value name[0m
-[0m[[0m[31merror[0m] [0m[0m          name = evt.name,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:15:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:16:11: not found: value quantity[0m
-[0m[[0m[31merror[0m] [0m[0m          quantity = evt.quantity.toString[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:21:9: not found: value CheckoutAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        CheckoutAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:22:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:23:11: not found: value name[0m
-[0m[[0m[31merror[0m] [0m[0m          name = evt.name,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:24:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:25:11: not found: value quantity[0m
-[0m[[0m[31merror[0m] [0m[0m          quantity = evt.quantity.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:26:11: not found: value customerId[0m
-[0m[[0m[31merror[0m] [0m[0m          customerId = evt.customerId.toString[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:31:9: not found: value PayAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        PayAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:32:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:33:11: not found: value name[0m
-[0m[[0m[31merror[0m] [0m[0m          name = evt.name,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:34:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:35:11: not found: value quantity[0m
-[0m[[0m[31merror[0m] [0m[0m          quantity = evt.quantity.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:36:11: not found: value customerId[0m
-[0m[[0m[31merror[0m] [0m[0m          customerId = evt.customerId.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:37:11: not found: value price[0m
-[0m[[0m[31merror[0m] [0m[0m          price = evt.price.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:38:11: not found: value totalPrice[0m
-[0m[[0m[31merror[0m] [0m[0m          totalPrice = evt.totalPrice.toString[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:44:9: not found: value DeliverAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        DeliverAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:45:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:46:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:47:11: not found: value address[0m
-[0m[[0m[31merror[0m] [0m[0m          address = evt.address[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:52:9: not found: value ReturnAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        ReturnAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:53:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:54:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:59:9: not found: value ExamineAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        ExamineAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:60:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:61:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:66:9: not found: value ShowcaseAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m        ShowcaseAutoPartEventV1([0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:67:11: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m          ts = evt.ts.toString,[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:68:11: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m          autoPartId = evt.autoPartId.toString[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:81:17: not found: type CreateAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: CreateAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:83:11: not found: value CreatePostEvent[0m
-[0m[[0m[31merror[0m] [0m[0m          CreatePostEvent([0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:84:13: not found: value ts[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:85:13: not found: value name[0m
-[0m[[0m[31merror[0m] [0m[0m            name = evt.name,[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:86:13: not found: value autoPartId[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:87:13: not found: value quantity[0m
-[0m[[0m[31merror[0m] [0m[0m            quantity = evt.quantity.toString.toLong[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:92:17: not found: type CheckoutAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: CheckoutAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:95:22: value ts is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:97:30: value autoPartId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId,[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:96:24: value name is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            name = evt.name,[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:98:28: value quantity is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            quantity = evt.quantity.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:99:30: value customerId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            customerId = evt.customerId.toString.toLong[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:104:17: not found: type PayAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: PayAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:107:22: value ts is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:109:30: value autoPartId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId,[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:108:24: value name is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            name = evt.name,[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:110:28: value quantity is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            quantity = evt.quantity.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:111:30: value customerId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            customerId = evt.customerId.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:112:25: value price is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            price = evt.price.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:113:30: value totalPrice is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            totalPrice = evt.totalPrice.toString.toLong[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:118:17: not found: type DeliverAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: DeliverAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:121:22: value ts is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:122:30: value autoPartId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:123:27: value address is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            address = evt.address[0m
-[0m[[0m[31merror[0m] [0m[0m                          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:128:17: not found: type ReturnAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: ReturnAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:131:22: value ts is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:132:30: value autoPartId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId.toString.toLong[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:137:17: not found: type ExamineAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: ExamineAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:140:22: value ts is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:141:30: value autoPartId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId.toString.toLong[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:146:17: not found: type ShowcaseAutoPartEventV1[0m
-[0m[[0m[31merror[0m] [0m[0m      case evt: ShowcaseAutoPartEventV1 => {[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:149:22: value ts is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            ts = evt.ts.toString.toLong,[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:150:30: value autoPartId is not a member of kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent[0m
-[0m[[0m[31merror[0m] [0m[0m            autoPartId = evt.autoPartId.toString.toLong[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/entity/AutoPartEntity.scala:155:25: not found: value eventProcessorTag[0m
-[0m[[0m[31merror[0m] [0m[0m      ).withTagger(_ => eventProcessorTag)[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:9:57: Unused import[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.entity.AutoPartEntity[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:10:57: Unused import[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.route.{HttpRoutes, WebServer}[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:10:69: Unused import[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.route.{HttpRoutes, WebServer}[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                                    ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:11:55: Unused import[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport kz.asaheyt.inc.autopartsstore.persistence.util.EventProcessorSettings[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:68:9: local val system in method startNode is never used[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:69:9: local val system in method startNode is never used[0m
 [0m[[0m[33mwarn[0m] [0m[0m    val system = ActorSystem(Boot(), "Template", config(port, httpPort))[0m
 [0m[[0m[33mwarn[0m] [0m[0m        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/HttpRoutes.scala:8:29: parameter value system in class HttpRoutes is never used[0m
-[0m[[0m[33mwarn[0m] [0m[0mclass HttpRoutes()(implicit system: ActorSystem[_], config: Config) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/HttpRoutes.scala:8:53: parameter value config in class HttpRoutes is never used[0m
-[0m[[0m[33mwarn[0m] [0m[0mclass HttpRoutes()(implicit system: ActorSystem[_], config: Config) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:113:40: Widening conversion from Long to Double is deprecated because it loses precision. Write `.toDouble` instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m            price = evt.price.toString.toLong,[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:114:50: Widening conversion from Long to Double is deprecated because it loses precision. Write `.toDouble` instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m            totalPrice = evt.totalPrice.toString.toLong[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/entity/AutoPartEntity.scala:147:15: private val logger in object AutoPartEntity is never used[0m
+[0m[[0m[33mwarn[0m] [0m[0m  private val logger = Logger(getClass.getSimpleName)[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/AutoPartRoutes.scala:6:100: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport akka.http.scaladsl.model.{ContentTypes, HttpEntity, HttpMethods, HttpRequest, HttpResponse, StatusCodes}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/AutoPartRoutes.scala:12:24: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.parser.parse[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/AutoPartRoutes.scala:17:18: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.{Json, parser}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/AutoPartRoutes.scala:17:24: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.{Json, parser}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/AutoPartRoutes.scala:18:30: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.generic.auto._[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/route/HttpRoutes.scala:10:102: parameter value config in class HttpRoutes is never used[0m
+[0m[[0m[33mwarn[0m] [0m[0mclass HttpRoutes()(implicit system: ActorSystem[_], implicit val executionContext: ExecutionContext, config: Config) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:4:18: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.{Decoder, Encoder}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:4:27: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.{Decoder, Encoder}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:5:28: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport cats.syntax.functor._[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:6:30: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.generic.auto._[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:7:24: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport io.circe.syntax._[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:12:95: Block result was adapted via implicit conversion (method apply) taking a by-name parameter[0m
+[0m[[0m[33mwarn[0m] [0m[0m  implicit val autoPartCreateEncodeDecode: EncoderDecoder[AutoPartDTO] = DerivedEncoderDecoder[AutoPartDTO][0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/util/Codec.scala:16:100: Block result was adapted via implicit conversion (method apply) taking a by-name parameter[0m
+[0m[[0m[33mwarn[0m] [0m[0m  implicit val autoPartSummaryEncodeDecode: EncoderDecoder[AutoPartSummary] = DerivedEncoderDecoder[AutoPartSummary][0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/Boot.scala:20:10: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Some((x: String forSome x not in "cassandra"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m    args.headOption match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:10:22: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (x: kz.asaheyt.inc.autopartsstore.persistence.event.AutoPartEvent forSome x not in (kz.asaheyt.inc.autopartsstore.persistence.event.CheckoutAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.CreateAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.DeliverAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.ExamineAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.PayAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.ReturnAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.ShowcaseAutoPartEvent))[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val protoEvent = e match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/adapter/AutoPartEventAdapter.scala:81:7: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (x: kz.asaheyt.inc.autopartsstore.persistence.model.protobuf.AutoPartProtoEvent forSome x not in (kz.asaheyt.inc.autopartsstore.persistence.event.proto.CheckoutAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.CreateAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.DeliverAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.ExamineAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.PayAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.ReturnAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.ShowcaseAutoPartEventV1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m    p.event match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/entity/AutoPartEntity.scala:58:53: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (x: kz.asaheyt.inc.autopartsstore.persistence.event.AutoPartEvent forSome x not in (kz.asaheyt.inc.autopartsstore.persistence.event.CheckoutAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.CreateAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.DeliverAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.ExamineAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.PayAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.ReturnAutoPartEvent, kz.asaheyt.inc.autopartsstore.persistence.event.ShowcaseAutoPartEvent))[0m
+[0m[[0m[33mwarn[0m] [0m[0m    def update(event: AutoPartEvent): StateHolder = event match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                                    ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m7 warnings found[0m
-[0m[[0m[31merror[0m] [0m[0m73 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/entity/AutoPartEntity.scala:175:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (x: kz.asaheyt.inc.autopartsstore.persistence.command.AutoPartCommand forSome x not in (kz.asaheyt.inc.autopartsstore.persistence.command.CheckoutAutoPartCommand, kz.asaheyt.inc.autopartsstore.persistence.command.CreateAutoPartCommand, kz.asaheyt.inc.autopartsstore.persistence.command.DeliverAutoPartCommand, kz.asaheyt.inc.autopartsstore.persistence.command.ExamineAutoPartCommand, kz.asaheyt.inc.autopartsstore.persistence.command.PayAutoPartCommand, kz.asaheyt.inc.autopartsstore.persistence.command.ReturnAutoPartCommand, kz.asaheyt.inc.autopartsstore.persistence.command.ShowcaseAutoPartCommand))[0m
+[0m[[0m[33mwarn[0m] [0m[0m    command match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/serializable/proto/AutoPartSerializer.scala:28:44: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m    case evt: CreateAutoPartEventV1 => evt.toByteArray[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/serializable/proto/AutoPartSerializer.scala:21:51: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (x: AnyRef forSome x not in (kz.asaheyt.inc.autopartsstore.persistence.event.proto.CheckoutAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.CreateAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.DeliverAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.ExamineAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.PayAutoPartEventV1, kz.asaheyt.inc.autopartsstore.persistence.event.proto.ReturnAutoPartEventV1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def toBinary(o: AnyRef): Array[Byte] = o match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/src/main/scala/kz/asaheyt/inc/autopartsstore/persistence/serializable/proto/AutoPartSerializer.scala:31:75: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: (x: String forSome x not in (CheckoutAutoPartEventManifestV1, CreateAutoPartEventManifestV1, DeliverAutoPartEventManifestV1, ExamineAutoPartEventManifestV1, PayAutoPartEventManifestV1, ReturnAutoPartEventManifestV1, ShowcaseAutoPartEventManifestV1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def fromBinary(bytes: Array[Byte], manifest: String): AnyRef = manifest match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m25 warnings found[0m

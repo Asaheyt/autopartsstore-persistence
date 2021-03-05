@@ -8,7 +8,14 @@
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/scala" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/test/scala" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.13/src_managed/main" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.13/src_managed/main" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/global-logging" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/protobuf_external" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/protobuf_external_src" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/task-temp-directory" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -41,12 +48,18 @@
     <orderEntry type="library" name="sbt: com.github.stephenc.jcip:jcip-annotations:1.0-1:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.swagger-akka-http:swagger-akka-http_2.13:2.0.4:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.swagger-akka-http:swagger-scala-module_2.13:2.0.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.protobuf:protobuf-java:3.11.4:jar" level="project" />
     <orderEntry type="library" name="sbt: com.hierynomus:asn-one:0.4.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lightbend.akka:akka-projection-cassandra_2.13:1.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lightbend.akka:akka-projection-core_2.13:1.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lightbend.akka:akka-projection-eventsourced_2.13:1.0.0:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: com.lightbend.akka:akka-projection-testkit_2.13:1.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lightbend.akka:akka-stream-alpakka-cassandra_2.13:2.0.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.lihaoyi:fastparse_2.13:2.3.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.lihaoyi:geny_2.13:0.6.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.lihaoyi:sourcecode_2.13:0.2.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.thesamet.scalapb:lenses_2.13:0.10.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.thesamet.scalapb:scalapb-runtime_2.13:0.10.9:jar" level="project" />
     <orderEntry type="library" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: com.typesafe.akka:akka-actor-testkit-typed_2.13:2.6.10:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor-typed_2.13:2.6.10:jar" level="project" />
@@ -119,6 +132,7 @@
     <orderEntry type="library" name="sbt: org.ow2.asm:asm-util:7.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.ow2.asm:asm:7.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.reactivestreams:reactive-streams:1.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-collection-compat_2.13:2.1.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-java8-compat_2.13:0.9.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.13:1.1.2:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-xml_2.13:1.2.0:jar" level="project" />

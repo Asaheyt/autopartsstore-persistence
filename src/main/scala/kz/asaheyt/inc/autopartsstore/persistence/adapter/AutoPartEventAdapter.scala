@@ -1,6 +1,7 @@
 package kz.asaheyt.inc.autopartsstore.persistence.adapter
 
 import akka.persistence.typed.{EventAdapter, EventSeq}
+import kz.asaheyt.inc.autopartsstore.persistence.event.proto.{CheckoutAutoPartEventV1, CreateAutoPartEventV1, DeliverAutoPartEventV1, ExamineAutoPartEventV1, PayAutoPartEventV1, ReturnAutoPartEventV1, ShowcaseAutoPartEventV1}
 import kz.asaheyt.inc.autopartsstore.persistence.event.{AutoPartEvent, CheckoutAutoPartEvent, CreateAutoPartEvent, DeliverAutoPartEvent, ExamineAutoPartEvent, PayAutoPartEvent, ReturnAutoPartEvent, ShowcaseAutoPartEvent}
 
 class AutoPartEventAdapter() extends EventAdapter[AutoPartEvent, AutoPartWrapper] {
@@ -80,11 +81,11 @@ class AutoPartEventAdapter() extends EventAdapter[AutoPartEvent, AutoPartWrapper
     p.event match {
       case evt: CreateAutoPartEventV1 => {
         EventSeq.single(
-          CreatePostEvent(
+          CreateAutoPartEvent(
             ts = evt.ts.toString.toLong,
             name = evt.name,
             autoPartId = evt.autoPartId.toString.toLong,
-            quantity = evt.quantity.toString.toLong
+            quantity = evt.quantity.toString.toInt
           )
         )
       }
@@ -94,8 +95,8 @@ class AutoPartEventAdapter() extends EventAdapter[AutoPartEvent, AutoPartWrapper
           CheckoutAutoPartEvent(
             ts = evt.ts.toString.toLong,
             name = evt.name,
-            autoPartId = evt.autoPartId,
-            quantity = evt.quantity.toString.toLong,
+            autoPartId = evt.autoPartId.toString.toLong,
+            quantity = evt.quantity.toString.toInt,
             customerId = evt.customerId.toString.toLong
           )
         )
@@ -106,8 +107,8 @@ class AutoPartEventAdapter() extends EventAdapter[AutoPartEvent, AutoPartWrapper
           PayAutoPartEvent(
             ts = evt.ts.toString.toLong,
             name = evt.name,
-            autoPartId = evt.autoPartId,
-            quantity = evt.quantity.toString.toLong,
+            autoPartId = evt.autoPartId.toString.toLong,
+            quantity = evt.quantity.toString.toInt,
             customerId = evt.customerId.toString.toLong,
             price = evt.price.toString.toLong,
             totalPrice = evt.totalPrice.toString.toLong

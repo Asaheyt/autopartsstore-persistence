@@ -1,5 +1,8 @@
 package kz.asaheyt.inc.autopartsstore.persistence.command
 
+import akka.actor.typed.ActorRef
+import kz.asaheyt.inc.autopartsstore.persistence.model.AutoPartSummary
+
 trait AutoPartCommand {
   def ts: Long
 
@@ -9,7 +12,8 @@ trait AutoPartCommand {
 case class CreateAutoPartCommand(ts: Long,
                                  autoPartId: Long,
                                  name: String,
-                                 quantity: Int) extends AutoPartCommand
+                                 quantity: Int,
+                                 replyTo: ActorRef[AutoPartSummary]) extends AutoPartCommand
 
 case class CheckoutAutoPartCommand(ts: Long,
                                    autoPartId: Long,

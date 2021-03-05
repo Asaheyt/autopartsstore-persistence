@@ -42,7 +42,9 @@ object Boot {
 
       val settings = EventProcessorSettings(system)
 
-      AutoPartEntityProto.init(system, settings)
+      implicit val executionContext = system.executionContext
+
+      AutoPartEntity.init(system, settings)
 
       val httpRoutes = new HttpRoutes()
       new WebServer(httpRoutes.routes, httpPort).start()

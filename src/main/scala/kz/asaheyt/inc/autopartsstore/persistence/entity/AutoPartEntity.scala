@@ -1,12 +1,14 @@
 package kz.asaheyt.inc.autopartsstore.persistence.entity
 
-import akka.actor.typed.Behavior
-import akka.cluster.sharding.typed.scaladsl.EntityTypeKey
+import akka.actor.typed.{ActorSystem, Behavior}
+import akka.cluster.sharding.typed.scaladsl.{ClusterSharding, Entity, EntityTypeKey}
+import akka.event.slf4j.Logger
 import akka.persistence.typed.PersistenceId
 import akka.persistence.typed.scaladsl.{Effect, EventSourcedBehavior, RetentionCriteria}
 import kz.asaheyt.inc.autopartsstore.persistence.adapter.AutoPartEventAdapter
 import kz.asaheyt.inc.autopartsstore.persistence.command.{AutoPartCommand, CheckoutAutoPartCommand, CreateAutoPartCommand, DeliverAutoPartCommand, ExamineAutoPartCommand, PayAutoPartCommand, ReturnAutoPartCommand, ShowcaseAutoPartCommand}
 import kz.asaheyt.inc.autopartsstore.persistence.event.{AutoPartEvent, CheckoutAutoPartEvent, CreateAutoPartEvent, DeliverAutoPartEvent, ExamineAutoPartEvent, PayAutoPartEvent, ReturnAutoPartEvent, ShowcaseAutoPartEvent}
+import kz.asaheyt.inc.autopartsstore.persistence.util.EventProcessorSettings
 
 object AutoPartEntity {
 
@@ -142,11 +144,21 @@ object AutoPartEntity {
     def empty: StateHolder = StateHolder(content = AutoPart.empty, state = AutoPartEntityState.INIT)
   }
 
+  private val logger = Logger(getClass.getSimpleName)
 
   val EntityKey: EntityTypeKey[AutoPartCommand] = EntityTypeKey[AutoPartCommand]("AutoPart")
 
+  def init(system: ActorSystem[_], eventProcessorSettings: EventProcessorSettings): Unit = {
 
-  def apply(AutoPartId: String): Behavior[AutoPartCommand] = {
+    ClusterSharding(system).init(Entity(EntityKey) { entityContext =>
+      val n = math.abs(entityContext.entityId.hashCode % eventProcessorSettings.parallelism)
+      val eventProcessorTag = eventProcessorSettings.tagPrefix + "-" + n
+      AutoPartEntity(entityContext.entityId, Set(eventProcessorTag))
+    })
+
+  }
+
+  def apply(AutoPartId: String, eventProcessorTag: Set[String]): Behavior[AutoPartCommand] = {
     EventSourcedBehavior[AutoPartCommand, AutoPartEvent, StateHolder](
       persistenceId = PersistenceId(EntityKey.name, AutoPartId),
       StateHolder.empty,
