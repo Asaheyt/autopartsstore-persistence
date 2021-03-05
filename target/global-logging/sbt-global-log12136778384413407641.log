@@ -1,0 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(all {file:/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/}autopartsstore-persistence/products {file:/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/}autopartsstore-persistence/test:products, None, None)[0m
+[0m[[0m[31merror[0m] [0m[0mInvalid URI[0m
+[0m[[0m[31merror[0m] [0m[0mExpected end of input.[0m
+[0m[[0m[31merror[0m] [0m[0mExpected '}'[0m
+[0m[[0m[31merror[0m] [0m[0mall {file:/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/}autopartsstore-persistence/products {file:/home/asaheyt/Документы/Projects/IdeaProjects/autopartsstore-persistence/}autopartsstore-persistence/test:products[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m

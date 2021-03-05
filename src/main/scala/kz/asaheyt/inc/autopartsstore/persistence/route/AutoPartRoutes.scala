@@ -54,7 +54,7 @@ class AutoPartRoutes(implicit system: ActorSystem[_], implicit val executionCont
 
             val message = HttpRequest(
               method = HttpMethods.POST,
-              uri = "http://localhost:8080/api/v1/autopart/create",
+              uri = "http://localhost:8080/home/test/autopart/add",
               entity = HttpEntity(ContentTypes.`application/json`, summary.asJson.noSpaces)
             )
 
